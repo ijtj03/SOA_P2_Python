@@ -5,7 +5,7 @@ from mongoengine import connect
 
 connect(
     host=
-    'mongodb://192.168.50.10:7001,192.168.50.11:7002,192.168.50.12:7003/compras?replicaSet=rs0',
+    'mongodb://192.168.50.10:7001,192.168.50.11:7002,192.168.50.12:7003/compras?replicaSet=bdcluster0',
     alias='default')
 
 app = Flask(__name__)

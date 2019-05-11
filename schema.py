@@ -6,7 +6,6 @@ from models import Catalog as CatalogModel
 
 
 class Product(MongoengineObjectType):
-
     class Meta:
         model = CatalogModel
 
@@ -20,8 +19,9 @@ class CreateProduct(graphene.Mutation):
     model = graphene.Field(Product)
 
     def mutate(self, info, name, description, stock):
-        model = Product._meta.model(
-            name=name, description=description, stock=stock)
+        model = Product._meta.model(name=name,
+                                    description=description,
+                                    stock=stock)
         model.save(force_insert=True)
         return CreateProduct(model=model)
 

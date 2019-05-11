@@ -3,8 +3,10 @@ from flask_graphql import GraphQLView
 from schema import schema
 from mongoengine import connect
 
-
-connect(host='mongodb://192.168.50.10:7001,192.168.50.11:7002,192.168.50.12:7003/compras?replicaSet=rs0', alias='default')
+connect(
+    host=
+    'mongodb://192.168.50.10:7001,192.168.50.11:7002,192.168.50.12:7003/compras?replicaSet=rs0',
+    alias='default')
 
 app = Flask(__name__)
 app.debug = True
